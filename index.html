@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blueviolet;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+    </style>
+    <title>SoftServe_Homework_DOM&jQuery</title>
+</head>
+<body>
+    
+<h1 id="main-heading">Hello world!</h1>
+<h2></h2>
+<div id="fadeOutText"></div>
+<br/>
+<div id="flashText"></div>
+<h3></h3>
+
+<img alt="Картинка" src="https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&quality=85&auto=format&fit=max&s=a52bbe202f57ac0f5ff7f47166906403" style="display:none;" width="600" />
+
+
+<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    
+    
+    <script>
+
+    // // заміна заголовка на той, що введе користувач
+    // let newHeadingText = prompt("Type a new heading"); 
+    // $("#main-heading").text(newHeadingText); 
+
+    // додаємо новий елемент в кінці body
+    $("body").append("<h2>Вивчаємо jQuery</h2>");
+    $("body").append("<p>Додаємо новий контент</p>");
+
+    // // fadeOut приховує елемент за 3 секунди із сувом решти контенту
+    // $("h1").fadeOut(3000);
+    $("h2").fadeOut(6000);
+    $("p").fadeOut(9000);
+
+    // якщо <p> а не <div>, тоді скільки секунд не став, текст щезне разом із попередньою установкою в <p>
+    $('#fadeOutText').text("Цей текст щезне останнім").fadeOut(18000); 
+
+    // ланцюговий виклик
+    $('#flashText').text("Цей текст трохи поблимає").fadeOut(2000).fadeIn(2000).fadeOut(2000).fadeIn(2000).fadeOut(3000);
+
+    // елемент щезає вгору, з'являється вниз
+    $("h3").text("Slide").slideUp(2000).slideDown(2000).slideUp(2000).slideDown(2000).fadeOut(4000);
+
+    // // заголовок мигає 10 разів та залишається
+    for (i=0; i < 10; i++) {
+    $("h1").fadeOut(1000);
+    $("h1").fadeIn(1000)
+    }
+
+    // методи show & hide; картинка скрита (style="display:none;")
+    $("img").show();
+    $("img").hide(1000, function () {
+            $("img").show(1000);
+        });
+
+
+
+    </script>
+</body>
+</html>
