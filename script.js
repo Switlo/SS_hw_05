@@ -19,3 +19,14 @@ $("p").fadeOut(3000).fadeIn(2000);
     })
 
 // #2 Заголовок, що блимає
+
+for (i = 0; i < 5; i++) { 
+    $("#first-heading").fadeOut(1000).fadeIn(1000);
+}
+
+let time = 1000;
+for (j = 0; j < 5; j++) { 
+    $("#first-heading").fadeOut(time).fadeIn(time);
+    time = time + 1000;
+}
+
